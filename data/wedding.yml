@@ -10,7 +10,7 @@ events:
     location: "Chiesa rupestre Madonna delle Grazie"
     address: "74020 San Marzano di San Giuseppe TA, Italia"
     map_url: "https://maps.google.com/?q=Chiesa+rupestre+Madonna+delle+Grazie,+San+Marzano+di+San+Giuseppe+TA"
-    image: "/images/cards wedding/chiesa.png"
+    image: "/images/cards wedding/chiesa-b3188ba9.png"
   
   reception:
     date: "6 giugno 2026"
@@ -18,7 +18,7 @@ events:
     location: "Agriturismo Ristorante Tredicina"
     address: "Contrada Tredicina, 72021 Francavilla Fontana BR, Italia"
     map_url: "https://maps.google.com/?q=Agriturismo+Ristorante+Tredicina,+Contrada+Tredicina,+Francavilla+Fontana+BR"
-    image: "/images/cards wedding/c_dinner_1.jpg"
+    image: "/images/cards wedding/c_dinner_1-0cfab121.jpg"
   
   brunch:
     date: "7 giugno 2026"
@@ -26,7 +26,7 @@ events:
     location: "Agriturismo Ristorante Tredicina"
     address: "Contrada Tredicina, 72021 Francavilla Fontana BR, Italia"
     map_url: "https://maps.google.com/?q=Agriturismo+Ristorante+Tredicina,+Contrada+Tredicina,+Francavilla+Fontana+BR"
-    image: "/images/cards wedding/brunch.jpeg"
+    image: "/images/cards wedding/brunch-420e8013.jpeg"
 
 accommodation:
   masseria:
