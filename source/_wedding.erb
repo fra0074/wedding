@@ -1,0 +1,78 @@
+<!-- Wedding Section -->
+<section id="wedding" class="section wedding-section">
+  <div class="section-background">
+    <div class="bg-decorations">
+      <div class="bg-decoration bg-decoration-1"></div>
+      <div class="bg-decoration bg-decoration-2"></div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title"><%= current_translations.wedding.title %></h2>
+      <div class="section-divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <div class="divider-line"></div>
+      </div>
+    </div>
+
+    <div class="events-grid">
+      <% %w[ceremony reception brunch].each_with_index do |event_key, index| %>
+        <% event = wedding_data.events[event_key] %>
+        <div class="event-card">
+          <div class="event-image">
+            <img src="<%= event.image %>" alt="<%= current_translations.wedding[event_key] %>" class="event-bg">
+            <div class="event-overlay"></div>
+            <div class="event-header">
+              <svg class="event-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <% if index == 0 %>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0V3m6 4V3M6 7h12l1 12H5l1-12z"></path>
+                <% elsif index == 1 %>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                <% else %>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <% end %>
+              </svg>
+              <h3 class="event-title"><%= current_translations.wedding[event_key] %></h3>
+            </div>
+          </div>
+          
+          <div class="event-content">
+            <div class="event-detail">
+              <svg class="detail-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0V3m6 4V3M6 7h12l1 12H5l1-12z"></path>
+              </svg>
+              <span><%= event.date %></span>
+            </div>
+            
+            <div class="event-detail">
+              <svg class="detail-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span><%= current_translations.wedding.time %> <%= event.time %></span>
+            </div>
+            
+            <div class="event-detail">
+              <svg class="detail-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              </svg>
+              <div>
+                <p class="location-name"><%= event.location %></p>
+                <p class="location-address"><%= event.address %></p>
+              </div>
+            </div>
+            
+            <button onclick="openEventModal('<%= event_key %>')" class="map-button">
+              <svg class="button-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <%= current_translations.wedding.view_map %>
+            </button>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</section>

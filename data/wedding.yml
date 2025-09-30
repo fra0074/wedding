@@ -1,0 +1,73 @@
+couples:
+  bride: "Candice"
+  groom: "Francesco"
+  wedding_date: "6 giugno 2026"
+
+events:
+  ceremony:
+    date: "6 giugno 2026"
+    time: "16:30"
+    location: "Chiesa rupestre Madonna delle Grazie"
+    address: "74020 San Marzano di San Giuseppe TA, Italia"
+    map_url: "https://maps.google.com/?q=Chiesa+rupestre+Madonna+delle+Grazie,+San+Marzano+di+San+Giuseppe+TA"
+    image: "/images/cards wedding/chiesa.png"
+  
+  reception:
+    date: "6 giugno 2026"
+    time: "18:00"
+    location: "Agriturismo Ristorante Tredicina"
+    address: "Contrada Tredicina, 72021 Francavilla Fontana BR, Italia"
+    map_url: "https://maps.google.com/?q=Agriturismo+Ristorante+Tredicina,+Contrada+Tredicina,+Francavilla+Fontana+BR"
+    image: "/images/cards wedding/c_dinner_1.jpg"
+  
+  brunch:
+    date: "7 giugno 2026"
+    time: "09:00"
+    location: "Agriturismo Ristorante Tredicina"
+    address: "Contrada Tredicina, 72021 Francavilla Fontana BR, Italia"
+    map_url: "https://maps.google.com/?q=Agriturismo+Ristorante+Tredicina,+Contrada+Tredicina,+Francavilla+Fontana+BR"
+    image: "/images/cards wedding/brunch.jpeg"
+
+accommodation:
+  masseria:
+    name: "Masseria Tredicina"
+    description: "Camere disponibili per la notte dell'evento (6 giugno 2026)"
+    note: "Conferma tramite RSVP"
+  
+  nearby:
+    - name: "Hotel Villa Cenci"
+      type: "Hotel"
+      distance: "3 km"
+      contact: "+39 0831 123456"
+    - name: "B&B Corte dei Melograni"
+      type: "B&B"
+      distance: "2.5 km"
+      contact: "+39 0831 234567"
+    - name: "Trulli experience"
+      type: "Airbnb"
+      distance: "4 km"
+      contact: "airbnb.com/rooms/12345"
+
+travel:
+  airports:
+    - name: "Bari"
+      code: "BRI"
+      distance: "80 km"
+    - name: "Brindisi"
+      code: "BDS"
+      distance: "45 km"
+  attractions:
+    - "Ostuni"
+    - "Alberobello"
+    - "Polignano a Mare"
+    - "Lecce"
+    - "Torre Guaceto"
+
+images:
+  hero_bg: "/images/hero8.jpg"
+  travel_bg: "https://images.unsplash.com/photo-1661429885532-5bb172f9dd5c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHx0cnVsbGklMjBhbGJlcm9iZWxsb3xlbnwwfHx8fDE3NTkwMDIxMzB8MA&ixlib=rb-4.1.0&q=85"
+  accommodation_bg: "https://images.unsplash.com/photo-1661429885766-4be1f7526250?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwzfHx0cnVsbGklMjBhbGJlcm9iZWxsb3xlbnwwfHx8fDE3NTkwMDIxMzB8MA&ixlib=rb-4.1.0&q=85"
+  rsvp_bg: "https://images.unsplash.com/photo-1707333512379-8f70ad28dca4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwzfHxpdGFsaWFuJTIwd2VkZGluZyUyMHZlbnVlfGVufDB8fHx8MTc1OTAwMjE1MXww&ixlib=rb-4.1.0&q=85"
+  faq_bg: "https://images.unsplash.com/photo-1663080821866-c469deda373a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHxpdGFsaWFuJTIwd2VkZGluZyUyMHZlbnVlfGVufDB8fHx8MTc1OTAwMjE1MXww&ixlib=rb-4.1.0&q=85"
+  bougainvillea: "https://images.unsplash.com/photo-1628345524108-1fb58928f94b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwxfHxib3VnYWludmlsbGVhJTIwbWVkaXRlcnJhbmVhbnxlbnwwfHx8fDE3NTkwMDIxNDV8MA&ixlib=rb-4.1.0&q=85"
+  masseria_feature: "https://images.unsplash.com/photo-1704735482408-08a3e935bca4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwzfHxib3VnYWludmlsbGVhJTIwbWVkaXRlcnJhbmVhbnxlbnwwfHx8fDE3NTkwMDIxNDV8MA&ixlib=rb-4.1.0&q=85"

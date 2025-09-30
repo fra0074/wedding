@@ -1,0 +1,52 @@
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+  <div class="hero-background">
+    <img src="<%= wedding_data.images.hero_bg %>" alt="Puglia Countryside" class="hero-bg-img">
+    <div class="hero-overlay"></div>
+  </div>
+  
+  <div class="hero-decorations">
+    <div class="decoration decoration-1"></div>
+    <div class="decoration decoration-2"></div>
+    <div class="decoration decoration-3"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-card">
+      <div class="hero-heart">
+        <svg class="heart-icon" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+        </svg>
+        <div class="heart-pulse"></div>
+      </div>
+
+      <div class="hero-text">
+        <h1 class="hero-title"><%= current_translations.hero.title %></h1>
+        
+        <div class="hero-subtitle">
+          <span class="hero-date"><%= current_translations.hero.subtitle %></span>
+        </div>
+      </div>
+
+      <div class="hero-description">
+        <div>
+          <p><%= current_translations.hero.description %></p>
+        </div>
+      </div>
+
+      <div class="hero-divider-line">
+        <div class="divider-line"></div>
+        <svg class="divider-heart" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+        </svg>
+        <div class="divider-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="scroll-mouse">
+      <div class="scroll-wheel"></div>
+    </div>
+  </div>
+</section>

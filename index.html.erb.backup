@@ -1,0 +1,5 @@
+<%= partial "hero" %>
+<%= partial "wedding" %>
+<%= partial "travel" %>
+<%= partial "rsvp" %>
+<%= partial "faq" %>

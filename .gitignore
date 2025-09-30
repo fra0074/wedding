@@ -1,0 +1,33 @@
+# Build output
+build/
+.tmp/
+
+# Ruby
+.bundle/
+vendor/
+
+# Environment variables
+.env
+.env.local
+
+# Middleman
+.cache/
+.sass-cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp

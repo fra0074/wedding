@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fiore semplice di test -->
+  <circle cx="100" cy="80" r="15" fill="#ff69b4" />
+  <circle cx="85" cy="95" r="15" fill="#ff1493" />
+  <circle cx="115" cy="95" r="15" fill="#ff1493" />
+  <circle cx="85" cy="65" r="15" fill="#ff1493" />
+  <circle cx="115" cy="65" r="15" fill="#ff1493" />
+  <circle cx="100" cy="80" r="8" fill="#ffd700" />
+  <rect x="98" y="90" width="4" height="40" fill="#228b22" />
+  <ellipse cx="95" cy="105" rx="8" ry="4" fill="#32cd32" />
+  <ellipse cx="105" cy="115" rx="8" ry="4" fill="#32cd32" />
+  <text x="100" y="160" text-anchor="middle" fill="#8b4513" font-size="16">🌸 FIORE TEST 🌸</text>
+</svg>

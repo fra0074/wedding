@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="<%= current_page.data.locale || 'it' %>">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Candice & Francesco - <%= current_translations.hero.subtitle %></title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💕</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Pro -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css">
+    
+    <!-- Google Maps API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoa7ME6KQ1X7jhpgkBwf2YAjsPi28Yhh4&callback=initMap"></script>
+    
+    <!-- Styles -->
+    <%= stylesheet_link_tag "site" %>
+    
+    <!-- Meta tags -->
+    <meta name="description" content="<%= current_translations.hero.description %>">
+    <meta property="og:title" content="Candice & Francesco - <%= current_translations.hero.subtitle %>">
+    <meta property="og:description" content="<%= current_translations.hero.description %>">
+    <meta property="og:image" content="<%= wedding_data.images.hero_bg %>">
+    <meta property="og:type" content="website">
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+      <div class="nav-container">
+        <!-- Logo -->
+        <div class="nav-logo">
+          <a href="#home" class="logo-link">C & F</a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="nav-menu">
+          <% %w[home wedding travel stay rsvp faq].each do |section| %>
+            <a href="#<%= section %>" class="nav-link" data-section="<%= section %>">
+              <%= current_translations.nav[section] %>
+            </a>
+          <% end %>
+          
+          <!-- Language Selector -->
+          <div class="language-selector">
+        <button class="language-btn" id="languageBtn">
+          <% current_locale = current_page.data.locale || 'it' %>
+          <% flag_emoji = case current_locale
+               when 'en' then '🇬🇧'
+               when 'fr' then '🇫🇷'
+               else '🇮🇹'
+             end %>
+          <span class="flag-emoji"><%= flag_emoji %></span>
+          <span><%= current_locale.upcase %></span>
+        </button>
+            <div class="language-dropdown" id="languageDropdown">
+              <a href="<%= language_url(:it) %>" class="dropdown-item">🇮🇹 Italiano</a>
+              <a href="<%= language_url(:en) %>" class="dropdown-item">🇬🇧 English</a> 
+              <a href="<%= language_url(:fr) %>" class="dropdown-item">🇫🇷 Français</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div class="mobile-menu" id="mobileMenu">
+        <% %w[home wedding travel stay rsvp faq].each do |section| %>
+          <a href="#<%= section %>" class="mobile-nav-link" data-section="<%= section %>">
+            <%= current_translations.nav[section] %>
+          </a>
+        <% end %>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <%= yield %>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-main">
+          <h3 class="footer-title">Candice & Francesco</h3>
+          
+          <div class="footer-details">
+            <div class="footer-item">
+              <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0V3m6 4V3M6 7h12l1 12H5l1-12z"></path>
+              </svg>
+              <span><%= current_translations.footer.date %></span>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-item">
+              <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <span><%= current_translations.footer.location %></span>
+            </div>
+          </div>
+
+          <div class="footer-love">
+            <svg class="heart" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="love-message"><%= current_translations.footer.message %></span>
+            <svg class="heart" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="footer-divider-main"></div>
+
+        <div class="footer-copyright">
+          <p>&copy; 2026 <%= current_translations.footer.copyright %></p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <%= javascript_include_tag "site" %>
+    
+    <!-- Google Maps Script -->
+    <script>
+      function initMap() {
+        console.log('initMap called');
+        
+        // Trova l'elemento map
+        const mapElement = document.getElementById('map');
+        if (!mapElement) {
+          console.error('Map element not found');
+          return;
+        }
+        
+        console.log('Map element found:', mapElement);
+        
+        // Centro della mappa tra i due luoghi
+        const center = { lat: 40.4919, lng: 17.5444 };
+        
+        try {
+        // Inizializza la mappa
+        const map = new google.maps.Map(mapElement, {
+          zoom: 9,
+            center: center,
+            mapTypeId: 'roadmap',
+            zoomControl: true,
+            zoomControlOptions: {
+              position: google.maps.ControlPosition.RIGHT_CENTER
+            },
+            fullscreenControl: true,
+            fullscreenControlOptions: {
+              position: google.maps.ControlPosition.TOP_RIGHT
+            },
+            mapTypeControl: true,
+            mapTypeControlOptions: {
+              style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+              position: google.maps.ControlPosition.TOP_CENTER
+            },
+            streetViewControl: true,
+            streetViewControlOptions: {
+              position: google.maps.ControlPosition.RIGHT_BOTTOM
+            },
+            gestureHandling: 'auto',
+            disableDefaultUI: false,
+            styles: [
+              {
+                featureType: 'poi',
+                elementType: 'labels',
+                stylers: [{ visibility: 'on' }]
+              }
+            ]
+          });
+          
+          console.log('Map initialized successfully');
+        
+        // Nascondi il pulsante di chiusura dei popup di Google Maps
+        const style = document.createElement('style');
+        style.textContent = `
+          .gm-style-iw-chr {
+            display: none !important;
+          }
+          .gm-style-iw-d {
+            overflow: hidden !important;
+          }
+        `;
+        document.head.appendChild(style);
+        
+        // Funzione globale per chiudere i popup
+        window.closeInfoWindow = function(type) {
+          switch(type) {
+            case 'reception':
+              receptionInfoWindow.close();
+              break;
+            case 'ceremony':
+              ceremonyInfoWindow.close();
+              break;
+            case 'bari':
+              bariAirportInfoWindow.close();
+              break;
+            case 'brindisi':
+              brindisiAirportInfoWindow.close();
+              break;
+            case 'lecce':
+              lecceInfoWindow.close();
+              break;
+            case 'matera':
+              materaInfoWindow.close();
+              break;
+            case 'torreguaceto':
+              torreGuacetoInfoWindow.close();
+              break;
+            case 'alberobello':
+              alberobelloInfoWindow.close();
+              break;
+            case 'monopoli':
+              monopoliInfoWindow.close();
+              break;
+            case 'ostuni':
+              ostuniInfoWindow.close();
+              break;
+            case 'polignano':
+              polignanoInfoWindow.close();
+              break;
+            case 'grottaglie':
+              grottaglieInfoWindow.close();
+              break;
+          }
+        };
+        
+        // Marker per Agriturismo Tredicina (Ricevimento)
+        const receptionMarker = new google.maps.Marker({
+          position: { lat: 40.5319, lng: 17.5858 }, // Francavilla Fontana
+          map: map,
+          title: 'Agriturismo Ristorante Tredicina',
+          icon: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png'
+        });
+        
+        // Info window per il ricevimento
+        const receptionInfoWindow = new google.maps.InfoWindow({
+          content: '<div style="padding: 0; margin: 0; max-width: 280px; font-family: \'Inter\', sans-serif; position: relative;">' +
+                   '<button onclick="closeInfoWindow(\'reception\')" style="position: absolute; top: 8px; right: 8px; background: #fff; border: 1px solid #ddd; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 14px; font-weight: bold; color: #666; z-index: 1000;">×</button>' +
+                   '<div style="padding: 15px; margin: 0;">' +
+                   '<h3 style="margin: 0 0 10px 0; color: #ff6b35; font-size: 18px; font-weight: 600;">🍽️ Ricevimento</h3>' +
+                   '<p style="margin: 0 0 8px 0; font-size: 16px; font-weight: 600; color: #333;">Agriturismo Ristorante Tredicina</p>' +
+                   '<p style="margin: 0; font-size: 14px; line-height: 1.4; color: #666;">Contrada Tredicina<br>72021 Francavilla Fontana BR, Italia</p>' +
+                   '<a href="https://maps.google.com/?q=Agriturismo+Ristorante+Tredicina,+Contrada+Tredicina,+72021+Francavilla+Fontana+BR,+Italia" target="_blank" style="display: inline-block; margin-top: 10px; padding: 8px 12px; background: #ff6b35; color: white; text-decoration: none; border-radius: 4px; font-size: 14px;">Vedi Indicazioni</a>' +
+                   '</div></div>'
+        });
+        
+        // Marker per Chiesa Madonna delle Grazie (Cerimonia)
+        const ceremonyMarker = new google.maps.Marker({
+          position: { lat: 40.4520, lng: 17.5030 }, // San Marzano di San Giuseppe
+          map: map,
+          title: 'Chiesa rupestre Madonna delle Grazie',
+          icon: {
+            url: '/images/markers/church-2.png',
+            scaledSize: new google.maps.Size(40, 40),
+            anchor: new google.maps.Point(20, 20)
+          }
+        });
+        
+        // Info window per la cerimonia
+        const ceremonyInfoWindow = new google.maps.InfoWindow({
+          content: '<div style="padding: 0; margin: 0; max-width: 280px; font-family: \'Inter\', sans-serif; position: relative;">' +
+                   '<button onclick="closeInfoWindow(\'ceremony\')" style="position: absolute; top: 8px; right: 8px; background: #fff; border: 1px solid #ddd; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 14px; font-weight: bold; color: #666; z-index: 1000;">×</button>' +
+                   '<div style="padding: 15px; margin: 0;">' +
+                   '<h3 style="margin: 0 0 10px 0; color: #c8986b; font-size: 18px; font-weight: 600;">⛪ Cerimonia</h3>' +
+                   '<p style="margin: 0 0 8px 0; font-size: 16px; font-weight: 600; color: #333;">Chiesa rupestre Madonna delle Grazie</p>' +
+                   '<p style="margin: 0; font-size: 14px; line-height: 1.4; color: #666;">74020 San Marzano di San Giuseppe TA<br>Italia</p>' +
+                   '<a href="https://maps.google.com/?q=Chiesa+rupestre+Madonna+delle+Grazie,+74020+San+Marzano+di+San+Giuseppe+TA,+Italia" target="_blank" style="display: inline-block; margin-top: 10px; padding: 8px 12px; background: #c8986b; color: white; text-decoration: none; border-radius: 4px; font-size: 14px;">Vedi Indicazioni</a>' +
+                   '</div></div>'
+        });
+        
+        // Event listeners per aprire le info windows
+        receptionMarker.addListener('click', () => {
+          ceremonyInfoWindow.close();
+          receptionInfoWindow.open(map, receptionMarker);
+        });
+        
+        ceremonyMarker.addListener('click', () => {
+          receptionInfoWindow.close();
+          ceremonyInfoWindow.open(map, ceremonyMarker);
+        });
+        
+        // Marker per Aeroporto di Bari (BRI)
+        const bariAirportMarker = new google.maps.Marker({
+          position: { lat: 41.1389, lng: 16.7606 }, // Aeroporto Bari Karol Wojtyla
+          map: map,
+          title: 'Aeroporto di Bari Karol Wojtyla (BRI)',
+          icon: {
+            url: '/images/markers/airport.png',
+            scaledSize: new google.maps.Size(30, 30),
+            anchor: new google.maps.Point(15, 15)
+          }
+        });
+        
+        // Info window per aeroporto Bari
+        const bariAirportInfoWindow = new google.maps.InfoWindow({
+          content: '<div style="padding: 0; margin: 0; max-width: 280px; font-family: \'Inter\', sans-serif; position: relative;">' +
+                   '<button onclick="closeInfoWindow(\'bari\')" style="position: absolute; top: 8px; right: 8px; background: #fff; border: 1px solid #ddd; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 14px; font-weight: bold; color: #666; z-index: 1000;">×</button>' +
+                   '<div style="padding: 15px; margin: 0;">' +
+                   '<h3 style="margin: 0 0 10px 0; color: #0066cc; font-size: 18px; font-weight: 600;">✈️ Aeroporto di Bari</h3>' +
+                   '<p style="margin: 0 0 8px 0; font-size: 16px; font-weight: 600; color: #333;">Bari Karol Wojtyla (BRI)</p>' +
+                   '<p style="margin: 0; font-size: 14px; line-height: 1.4; color: #666;">80 km dal luogo dell\'evento</p>' +
+                   '<a href="https://maps.google.com/?q=Aeroporto+di+Bari+Karol+Wojtyla" target="_blank" style="display: inline-block; margin-top: 10px; padding: 8px 12px; background: #0066cc; color: white; text-decoration: none; border-radius: 4px; font-size: 14px;">Vedi Indicazioni</a>' +
+                   '</div></div>'
+        });
+        
+        // Marker per Aeroporto di Brindisi (BDS)
+        const brindisiAirportMarker = new google.maps.Marker({
+          position: { lat: 40.6576, lng: 17.9470 }, // Aeroporto Brindisi Salento
+          map: map,
+          title: 'Aeroporto di Brindisi Salento (BDS)',
+          icon: {
+            url: '/images/markers/airport.png',
+            scaledSize: new google.maps.Size(30, 30),
+            anchor: new google.maps.Point(15, 15)
+          }
+        });
+        
+        // Info window per aeroporto Brindisi
+        const brindisiAirportInfoWindow = new google.maps.InfoWindow({
+          content: '<div style="padding: 0; margin: 0; max-width: 280px; font-family: \'Inter\', sans-serif; position: relative;">' +
+                   '<button onclick="closeInfoWindow(\'brindisi\')" style="position: absolute; top: 8px; right: 8px; background: #fff; border: 1px solid #ddd; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 14px; font-weight: bold; color: #666; z-index: 1000;">×</button>' +
+                   '<div style="padding: 15px; margin: 0;">' +
+                   '<h3 style="margin: 0 0 10px 0; color: #0066cc; font-size: 18px; font-weight: 600;">✈️ Aeroporto di Brindisi</h3>' +
+                   '<p style="margin: 0 0 8px 0; font-size: 16px; font-weight: 600; color: #333;">Brindisi Salento (BDS)</p>' +
+                   '<p style="margin: 0; font-size: 14px; line-height: 1.4; color: #666;">45 km dal luogo dell\'evento</p>' +
+                   '<a href="https://maps.google.com/?q=Aeroporto+di+Brindisi+Salento" target="_blank" style="display: inline-block; margin-top: 10px; padding: 8px 12px; background: #0066cc; color: white; text-decoration: none; border-radius: 4px; font-size: 14px;">Vedi Indicazioni</a>' +
+                   '</div></div>'
+        });
+        
+        // Event listeners per aeroporti
+        bariAirportMarker.addListener('click', () => {
+          receptionInfoWindow.close();
+          ceremonyInfoWindow.close();
+          brindisiAirportInfoWindow.close();
+          bariAirportInfoWindow.open(map, bariAirportMarker);
+        });
+        
+        brindisiAirportMarker.addListener('click', () => {
+          receptionInfoWindow.close();
+          ceremonyInfoWindow.close();
+          bariAirportInfoWindow.close();
+          brindisiAirportInfoWindow.open(map, brindisiAirportMarker);
+        });
+        
+        // Marker per attrazioni turistiche con popup
+        
+        // Lecce
+        const lecceMarker = new google.maps.Marker({
+          position: { lat: 40.3875, lng: 18.1750 }, // Spostato 4 km sopra la città
+          map: map,
+          title: 'Lecce',
+          icon: {
+            url: '/images/markers/star.png',
+            scaledSize: new google.maps.Size(25, 25),
+            anchor: new google.maps.Point(12.5, 12.5)
+          }
+        });
+        
+        const lecceInfoWindow = new google.maps.InfoWindow({
+          content: '<div style="padding: 0; margin: 0; max-width: 200px; font-family: \'Inter\', sans-serif; position: relative;">' +
+                   '<button onclick="closeInfoWindow(\'lecce\')" style="position: absolute; top: 5px; right: 5px; background: #fff; border: 1px solid #ddd; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 12px; font-weight: bold; color: #666; z-index: 1000;">×</button>' +
+                   '<div style="padding: 10px; margin: 0;">' +
+                   '<h4 style="margin: 0 0 5px 0; color: rgba(202, 43, 114, 1); font-size: 16px;">⭐ Lecce</h4>' +
+                   '<p style="margin: 0; font-size: 13px; color: #666;">Firenze del Sud</p>' +
+                   '</div></div>'
+        });
+        
+        // Matera
+        const materaMarker = new google.maps.Marker({
+          position: { lat: 40.7023, lng: 16.6043 }, // Spostato 4 km sopra la città
+          map: map,
+          title: 'Matera',
+          icon: {
+            url: '/images/markers/star.png',
+            scaledSize: new google.maps.Size(25, 25),
+            anchor: new google.maps.Point(12.5, 12.5)
+          }
+        });
+        
+        const materaInfoWindow = new google.maps.InfoWindow({
+          content: '<div style="padding: 0; margin: 0; max-width: 200px; font-family: \'Inter\', sans-serif; position: relative;">' +
+                   '<button onclick="closeInfoWindow(\'matera\')" style="position: absolute; top: 5px; right: 5px; background: #fff; border: 1px solid #ddd; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 12px; font-weight: bold; color: #666; z-index: 1000;">×</button>' +
+                   '<div style="padding: 10px; margin: 0;">' +
+                   '<h4 style="margin: 0 0 5px 0; color: rgba(202, 43, 114, 1); font-size: 16px;">⭐ Matera</h4>' +
+                   '<p style="margin: 0; font-size: 13px; color: #666;">Sassi patrimonio UNESCO</p>' +
+                   '</div></div>'
+        });
+        
+        // Riserva naturale di Torre Guaceto
+        const torreGuacetoMarker = new google.maps.Marker({
+          position: { lat: 40.7167, lng: 17.8000 }, // Posizione originale ripristinata
+          map: map,
+          title: 'Riserva naturale di Torre Guaceto',
+          icon: {
+            url: '/images/markers/star.png',
+            scaledSize: new google.maps.Size(25, 25),
+            anchor: new google.maps.Point(12.5, 12.5)
+          }
+        });
+        
+        const torreGuacetoInfoWindow = new google.maps.InfoWindow({
+          content: '<div style="padding: 0; margin: 0; max-width: 200px; font-family: \'Inter\', sans-serif; position: relative;">' +
+                   '<button onclick="closeInfoWindow(\'torreguaceto\')" style="position: absolute; top: 5px; right: 5px; background: #fff; border: 1px solid #ddd; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 12px; font-weight: bold; color: #666; z-index: 1000;">×</button>' +
+                   '<div style="padding: 10px; margin: 0;">' +
+                   '<h4 style="margin: 0 0 5px 0; color: rgba(202, 43, 114, 1); font-size: 16px;">⭐ Torre Guaceto</h4>' +
+                   '<p style="margin: 0; font-size: 13px; color: #666;">Riserva naturale marina</p>' +
+                   '</div></div>'
+        });
+        
+        // Alberobello
+        const alberobelloMarker = new google.maps.Marker({
+          position: { lat: 40.8177, lng: 17.2336 }, // Spostato 4 km sopra la città
+          map: map,
+          title: 'Alberobello',
+          icon: {
+            url: '/images/markers/star.png',
+            scaledSize: new google.maps.Size(25, 25),
+            anchor: new google.maps.Point(12.5, 12.5)
+          }
+        });
+        
+        const alberobelloInfoWindow = new google.maps.InfoWindow({
+          content: '<div style="padding: 0; margin: 0; max-width: 200px; font-family: \'Inter\', sans-serif; position: relative;">' +
+                   '<button onclick="closeInfoWindow(\'alberobello\')" style="position: absolute; top: 5px; right: 5px; background: #fff; border: 1px solid #ddd; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 12px; font-weight: bold; color: #666; z-index: 1000;">×</button>' +
+                   '<div style="padding: 10px; margin: 0;">' +
+                   '<h4 style="margin: 0 0 5px 0; color: rgba(202, 43, 114, 1); font-size: 16px;">⭐ Alberobello</h4>' +
+                   '<p style="margin: 0; font-size: 13px; color: #666;">Trulli patrimonio UNESCO</p>' +
+                   '</div></div>'
+        });
+        
+        // Monopoli
+        const monopoliMarker = new google.maps.Marker({
+          position: { lat: 40.9877, lng: 17.3017 }, // Spostato 4 km sopra la città
+          map: map,
+          title: 'Monopoli',
+          icon: {
+            url: '/images/markers/star.png',
+            scaledSize: new google.maps.Size(25, 25),
+            anchor: new google.maps.Point(12.5, 12.5)
+          }
+        });
+        
+        const monopoliInfoWindow = new google.maps.InfoWindow({
+          content: '<div style="padding: 0; margin: 0; max-width: 200px; font-family: \'Inter\', sans-serif; position: relative;">' +
+                   '<button onclick="closeInfoWindow(\'monopoli\')" style="position: absolute; top: 5px; right: 5px; background: #fff; border: 1px solid #ddd; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 12px; font-weight: bold; color: #666; z-index: 1000;">×</button>' +
+                   '<div style="padding: 10px; margin: 0;">' +
+                   '<h4 style="margin: 0 0 5px 0; color: rgba(202, 43, 114, 1); font-size: 16px;">⭐ Monopoli</h4>' +
+                   '<p style="margin: 0; font-size: 13px; color: #666;">Città costiera storica</p>' +
+                   '</div></div>'
+        });
+        
+        // Ostuni
+        const ostuniMarker = new google.maps.Marker({
+          position: { lat: 40.7678, lng: 17.5810 }, // Spostato 4 km sopra la città
+          map: map,
+          title: 'Ostuni',
+          icon: {
+            url: '/images/markers/star.png',
+            scaledSize: new google.maps.Size(25, 25),
+            anchor: new google.maps.Point(12.5, 12.5)
+          }
+        });
+        
+        const ostuniInfoWindow = new google.maps.InfoWindow({
+          content: '<div style="padding: 0; margin: 0; max-width: 200px; font-family: \'Inter\', sans-serif; position: relative;">' +
+                   '<button onclick="closeInfoWindow(\'ostuni\')" style="position: absolute; top: 5px; right: 5px; background: #fff; border: 1px solid #ddd; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 12px; font-weight: bold; color: #666; z-index: 1000;">×</button>' +
+                   '<div style="padding: 10px; margin: 0;">' +
+                   '<h4 style="margin: 0 0 5px 0; color: rgba(202, 43, 114, 1); font-size: 16px;">⭐ Ostuni</h4>' +
+                   '<p style="margin: 0; font-size: 13px; color: #666;">La Città Bianca</p>' +
+                   '</div></div>'
+        });
+        
+        // Polignano a mare
+        const polignanoMarker = new google.maps.Marker({
+          position: { lat: 41.0336, lng: 17.2197 }, // Spostato 4 km sopra la città
+          map: map,
+          title: 'Polignano a mare',
+          icon: {
+            url: '/images/markers/star.png',
+            scaledSize: new google.maps.Size(25, 25),
+            anchor: new google.maps.Point(12.5, 12.5)
+          }
+        });
+        
+        const polignanoInfoWindow = new google.maps.InfoWindow({
+          content: '<div style="padding: 0; margin: 0; max-width: 200px; font-family: \'Inter\', sans-serif; position: relative;">' +
+                   '<button onclick="closeInfoWindow(\'polignano\')" style="position: absolute; top: 5px; right: 5px; background: #fff; border: 1px solid #ddd; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 12px; font-weight: bold; color: #666; z-index: 1000;">×</button>' +
+                   '<div style="padding: 10px; margin: 0;">' +
+                   '<h4 style="margin: 0 0 5px 0; color: rgba(202, 43, 114, 1); font-size: 16px;">⭐ Polignano a mare</h4>' +
+                   '<p style="margin: 0; font-size: 13px; color: #666;">Grotte e mare cristallino</p>' +
+                   '</div></div>'
+        });
+        
+        // Grottaglie
+        const grottaglieMarker = new google.maps.Marker({
+          position: { lat: 40.5648, lng: 17.4378 }, // Spostato 4 km sopra la città
+          map: map,
+          title: 'Grottaglie',
+          icon: {
+            url: '/images/markers/star.png',
+            scaledSize: new google.maps.Size(25, 25),
+            anchor: new google.maps.Point(12.5, 12.5)
+          }
+        });
+        
+        const grottaglieInfoWindow = new google.maps.InfoWindow({
+          content: '<div style="padding: 0; margin: 0; max-width: 200px; font-family: \'Inter\', sans-serif; position: relative;">' +
+                   '<button onclick="closeInfoWindow(\'grottaglie\')" style="position: absolute; top: 5px; right: 5px; background: #fff; border: 1px solid #ddd; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 12px; font-weight: bold; color: #666; z-index: 1000;">×</button>' +
+                   '<div style="padding: 10px; margin: 0;">' +
+                   '<h4 style="margin: 0 0 5px 0; color: rgba(202, 43, 114, 1); font-size: 16px;">⭐ Grottaglie</h4>' +
+                   '<p style="margin: 0; font-size: 13px; color: #666;">Ceramiche tradizionali</p>' +
+                   '</div></div>'
+        });
+        
+        // Event listeners per le attrazioni
+        lecceMarker.addListener('click', () => {
+          receptionInfoWindow.close();
+          ceremonyInfoWindow.close();
+          bariAirportInfoWindow.close();
+          brindisiAirportInfoWindow.close();
+          materaInfoWindow.close();
+          torreGuacetoInfoWindow.close();
+          alberobelloInfoWindow.close();
+          monopoliInfoWindow.close();
+          ostuniInfoWindow.close();
+          polignanoInfoWindow.close();
+          grottaglieInfoWindow.close();
+          lecceInfoWindow.open(map, lecceMarker);
+        });
+        
+        materaMarker.addListener('click', () => {
+          receptionInfoWindow.close();
+          ceremonyInfoWindow.close();
+          bariAirportInfoWindow.close();
+          brindisiAirportInfoWindow.close();
+          lecceInfoWindow.close();
+          torreGuacetoInfoWindow.close();
+          alberobelloInfoWindow.close();
+          monopoliInfoWindow.close();
+          ostuniInfoWindow.close();
+          polignanoInfoWindow.close();
+          grottaglieInfoWindow.close();
+          materaInfoWindow.open(map, materaMarker);
+        });
+        
+        torreGuacetoMarker.addListener('click', () => {
+          receptionInfoWindow.close();
+          ceremonyInfoWindow.close();
+          bariAirportInfoWindow.close();
+          brindisiAirportInfoWindow.close();
+          lecceInfoWindow.close();
+          materaInfoWindow.close();
+          alberobelloInfoWindow.close();
+          monopoliInfoWindow.close();
+          ostuniInfoWindow.close();
+          polignanoInfoWindow.close();
+          grottaglieInfoWindow.close();
+          torreGuacetoInfoWindow.open(map, torreGuacetoMarker);
+        });
+        
+        alberobelloMarker.addListener('click', () => {
+          receptionInfoWindow.close();
+          ceremonyInfoWindow.close();
+          bariAirportInfoWindow.close();
+          brindisiAirportInfoWindow.close();
+          lecceInfoWindow.close();
+          materaInfoWindow.close();
+          torreGuacetoInfoWindow.close();
+          monopoliInfoWindow.close();
+          ostuniInfoWindow.close();
+          polignanoInfoWindow.close();
+          grottaglieInfoWindow.close();
+          alberobelloInfoWindow.open(map, alberobelloMarker);
+        });
+        
+        monopoliMarker.addListener('click', () => {
+          receptionInfoWindow.close();
+          ceremonyInfoWindow.close();
+          bariAirportInfoWindow.close();
+          brindisiAirportInfoWindow.close();
+          lecceInfoWindow.close();
+          materaInfoWindow.close();
+          torreGuacetoInfoWindow.close();
+          alberobelloInfoWindow.close();
+          ostuniInfoWindow.close();
+          polignanoInfoWindow.close();
+          grottaglieInfoWindow.close();
+          monopoliInfoWindow.open(map, monopoliMarker);
+        });
+        
+        ostuniMarker.addListener('click', () => {
+          receptionInfoWindow.close();
+          ceremonyInfoWindow.close();
+          bariAirportInfoWindow.close();
+          brindisiAirportInfoWindow.close();
+          lecceInfoWindow.close();
+          materaInfoWindow.close();
+          torreGuacetoInfoWindow.close();
+          alberobelloInfoWindow.close();
+          monopoliInfoWindow.close();
+          polignanoInfoWindow.close();
+          grottaglieInfoWindow.close();
+          ostuniInfoWindow.open(map, ostuniMarker);
+        });
+        
+        polignanoMarker.addListener('click', () => {
+          receptionInfoWindow.close();
+          ceremonyInfoWindow.close();
+          bariAirportInfoWindow.close();
+          brindisiAirportInfoWindow.close();
+          lecceInfoWindow.close();
+          materaInfoWindow.close();
+          torreGuacetoInfoWindow.close();
+          alberobelloInfoWindow.close();
+          monopoliInfoWindow.close();
+          ostuniInfoWindow.close();
+          grottaglieInfoWindow.close();
+          polignanoInfoWindow.open(map, polignanoMarker);
+        });
+        
+        grottaglieMarker.addListener('click', () => {
+          receptionInfoWindow.close();
+          ceremonyInfoWindow.close();
+          bariAirportInfoWindow.close();
+          brindisiAirportInfoWindow.close();
+          lecceInfoWindow.close();
+          materaInfoWindow.close();
+          torreGuacetoInfoWindow.close();
+          alberobelloInfoWindow.close();
+          monopoliInfoWindow.close();
+          ostuniInfoWindow.close();
+          polignanoInfoWindow.close();
+          grottaglieInfoWindow.open(map, grottaglieMarker);
+        });
+        
+        // Apri automaticamente l'info window del ricevimento
+        setTimeout(() => {
+          receptionInfoWindow.open(map, receptionMarker);
+        }, 1000);
+        
+        } catch (error) {
+          console.error('Error initializing map:', error);
+          showMapError();
+        }
+      }
+      
+      function showMapError() {
+        const mapElement = document.getElementById('map');
+        if (mapElement) {
+          mapElement.innerHTML = '<div style="display: flex; align-items: center; justify-content: center; height: 100%; background: linear-gradient(135deg, #e3f2fd, #e8f5e8); border-radius: 1rem;">' +
+                                 '<div style="text-align: center; color: #666;">' +
+                                 '<i class="fas fa-map-marker-alt" style="font-size: 2rem; margin-bottom: 1rem; color: var(--puglia-orange);"></i>' +
+                                 '<p>Mappa non disponibile</p>' +
+                                 '<p style="font-size: 0.9rem;">Usa i link sottostanti per le indicazioni</p>' +
+                                 '</div></div>';
+        }
+      }
+      
+      // Fallback se l'API di Google Maps non è disponibile
+      window.addEventListener('load', () => {
+        console.log('Window loaded, checking for Google Maps...');
+        
+        setTimeout(() => {
+          console.log('Checking Google Maps after timeout...');
+          
+          if (typeof google === 'undefined' || typeof google.maps === 'undefined') {
+            console.log('Google Maps not available, showing fallback');
+            showMapError();
+          } else {
+            console.log('Google Maps available but initMap might not have been called');
+            // Se Google Maps è disponibile ma la mappa è ancora vuota, chiamiamola manualmente
+            const mapElement = document.getElementById('map');
+            if (mapElement && mapElement.children.length === 0) {
+              console.log('Map element is empty, calling initMap manually');
+              initMap();
+            }
+          }
+        }, 3000);
+      });
+    </script>
+
+    <!-- Modal per informazioni eventi -->
+    <div id="eventModal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <h2 id="modalTitle">Informazioni Evento</h2>
+        <div id="modalBody">
+          <p>Contenuto informativo in arrivo...</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Gestione del modale
+      function openEventModal(eventType) {
+        const modal = document.getElementById('eventModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalBody = document.getElementById('modalBody');
+        
+        // Personalizza il contenuto in base al tipo di evento
+        switch(eventType) {
+          case 'ceremony':
+            modalTitle.textContent = 'Informazioni Cerimonia';
+            modalBody.innerHTML = '<p>Dettagli sulla cerimonia in arrivo...</p>';
+            break;
+          case 'reception':
+            modalTitle.textContent = 'Informazioni Cocktail & Cena';
+            modalBody.innerHTML = '<p>Dettagli sul cocktail e cena in arrivo...</p>';
+            break;
+          case 'brunch':
+            modalTitle.textContent = 'Informazioni Brunch & Post Event';
+            modalBody.innerHTML = '<p>Dettagli sul brunch in arrivo...</p>';
+            break;
+        }
+        
+        modal.style.display = 'block';
+      }
+
+      // Chiusura del modale
+      document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('eventModal');
+        const closeBtn = document.querySelector('.modal-close');
+        
+        closeBtn.onclick = function() {
+          modal.style.display = 'none';
+        }
+        
+        window.onclick = function(event) {
+          if (event.target === modal) {
+            modal.style.display = 'none';
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

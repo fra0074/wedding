@@ -1,0 +1,326 @@
+it:
+  nav:
+    home: "Home"
+    wedding: "Matrimonio"
+    travel: "Come Arrivare"
+    stay: "Dove Stare"
+    rsvp: "RSVP"
+    faq: "FAQ"
+  
+  hero:
+    title: "Candice & Francesco"
+    subtitle: "6 giugno 2026 • Puglia, Italia"
+    description: "Vi aspettiamo per celebrare insieme il nostro grande giorno nella meravigliosa Puglia"
+  
+  wedding:
+    title: "Informazioni sul Matrimonio"
+    ceremony: "Cerimonia"
+    reception: "Cocktail & Cena"
+    brunch: "Brunch & Post Event"
+    time: "Ore"
+    location: "Luogo"
+    view_map: "Informazioni"
+  
+  travel:
+    title: "Come Arrivare"
+    map_title: "Mappa della Puglia"
+    attractions_title: "Luoghi di Interesse Turistico"
+    by_plane: "In Aereo"
+    by_car: "In Auto"
+    by_train: "In Treno"
+    
+    tabs:
+      plane: "Aereo"
+      car: "Auto"
+      train: "Treno"
+    
+    plane:
+      title1: "Aeroporto di Brindisi (BDS)"
+      desc1: "Da Aeroporto di Brindisi (45 km): Opzione più vicina. Noleggio auto consigliato. Tempo di percorrenza: 45 minuti."
+      title2: "Aeroporto di Bari (BRI)"
+      desc2: "Da Aeroporto di Bari (80 km): Noleggia un'auto o prendi un autobus per Francavilla Fontana. Tempo di percorrenza: circa 1 ora."
+    
+    car:
+      title1: "Da Brindisi"
+      desc1: "Da Brindisi: Segui SS7 direzione Francavilla Fontana. Percorso diretto di 45 km."
+      title2: "Da Bari"
+      desc2: "Da Bari: Segui A14 direzione Brindisi, poi SS7 verso Francavilla Fontana."
+    
+    train:
+      title1: "In Treno"
+      desc1: "Da Roma/Milano: Treno fino a Bari o Brindisi, poi autobus locale o noleggio auto per raggiungere la location."
+    
+    useful_info:
+      title: "Informazioni Utili"
+      note: "È necessario noleggiare un mezzo di trasporto durante il soggiorno in Puglia per raggiungere comodamente le location."
+  
+  accommodation:
+    title: "Dove Stare"
+    subtitle: "Sistemazioni consigliate entro 5 km dalla location del matrimonio"
+    primary_title: "Masseria Tredicina"
+    primary_desc: "Camere disponibili per la notte dell'evento (6 giugno 2026)"
+    primary_note: "Conferma tramite RSVP"
+    nearby_title: "Altri Alloggi Nelle Vicinanze"
+    recommended: "Consigliato"
+    
+  rsvp:
+    title: "RSVP"
+    subtitle: "La Vostra Presenza È Il Regalo Più Prezioso"
+    deadline: "Vi preghiamo di confermare la vostra presenza entro"
+    deadline_date: "Febbraio 2026"
+    description: "Per organizzare al meglio il nostro giorno speciale, abbiamo bisogno di sapere chi sarà con noi. Per favore compilate il modulo di conferma includendo eventuali esigenze alimentari o altre richieste speciali."
+    button_text: "Conferma la tua Presenza"
+    note: "Il link al modulo Google sarà disponibile a breve"
+    accommodation_title: "Sistemazione alla Masseria"
+    accommodation_desc: "Se desiderate soggiornare alla Masseria Tredicina la notte del matrimonio, vi preghiamo di indicarlo nel modulo RSVP."
+    
+  faq:
+    title: "Domande Frequenti"
+    subtitle: "Tutto quello che dovete sapere sul nostro matrimonio"
+    contact_title: "Altre Domande?"
+    contact_desc: "Se avete altre domande, non esitate a contattarci direttamente. Saremo felici di aiutarvi a rendere il vostro soggiorno in Puglia indimenticabile!"
+    
+    regalo:
+      title: "Regalo"
+      question1: "Cosa possiamo regalarvi?"
+      answer1: "La vostra presenza è il regalo più prezioso! Se desiderate fare un regalo, apprezzeremmo un contributo per il nostro viaggio di nozze o per la nostra nuova casa insieme."
+      question2: "C'è una lista nozze?"
+      answer2: "Non abbiamo una lista nozze tradizionale. Preferiamo ricevere un contributo che ci aiuti a iniziare la nostra nuova vita insieme. Maggiori dettagli saranno forniti con l'invito."
+    
+    turismo:
+      title: "Turismo"
+      question1: "Quando è il periodo migliore per visitare la Puglia?"
+      answer1: "Giugno è perfetto! Il clima è caldo e soleggiato, ideale per esplorare le bellezze della regione. Vi consigliamo di arrivare qualche giorno prima per godervi Ostuni, Alberobello e le splendide coste."
+      question2: "È necessario noleggiare un'auto?"
+      answer2: "Sì, assolutamente! Un'auto è essenziale per muoversi agevolmente tra le location e per esplorare la bellissima Puglia durante il vostro soggiorno."
+    
+    generale:
+      title: "Informazioni Generali"
+      question1: "Qual è il dress code?"
+      answer1: "Semi-formale. Per gli uomini: camicia e pantaloni eleganti (giacca opzionale). Per le donne: vestito o gonna elegante. Evitate il nero totale e il bianco."
+      question2: "Posso portare i bambini?"
+      answer2: "Certamente! I bambini sono benvenuti. Vi preghiamo di segnalare la loro presenza nell'RSVP per organizzare menu e intrattenimento adeguati."
+    
+  footer:
+    date: "6 giugno 2026"
+    location: "Puglia, Italia"
+    message: "Con tutto il nostro amore"
+    copyright: "Matrimonio Candice & Francesco"
+
+en:
+  nav:
+    home: "Home"
+    wedding: "Wedding"
+    travel: "Getting There"
+    stay: "Where to Stay"
+    rsvp: "RSVP"
+    faq: "FAQ"
+  
+  hero:
+    title: "Candice & Francesco"
+    subtitle: "June 6, 2026 • Puglia, Italy"
+    description: "Join us to celebrate our special day in beautiful Puglia"
+  
+  wedding:
+    title: "Wedding Information"
+    ceremony: "Ceremony"
+    reception: "Cocktail & Dinner"
+    brunch: "Brunch & Post Event"
+    time: "Time"
+    location: "Location"
+    view_map: "Information"
+    
+  travel:
+    title: "Getting There"
+    map_title: "Puglia Map"
+    attractions_title: "Tourist Attractions"
+    by_plane: "By Plane"
+    by_car: "By Car"
+    by_train: "By Train"
+    
+    tabs:
+      plane: "Plane"
+      car: "Car"
+      train: "Train"
+    
+    plane:
+      title1: "Brindisi Airport (BDS)"
+      desc1: "From Brindisi Airport (45 km): Closest option. Car rental recommended. Travel time: 45 minutes."
+      title2: "Bari Airport (BRI)"
+      desc2: "From Bari Airport (80 km): Rent a car or take a bus to Francavilla Fontana. Travel time: approximately 1 hour."
+    
+    car:
+      title1: "From Brindisi"
+      desc1: "From Brindisi: Follow SS7 towards Francavilla Fontana. Direct route of 45 km."
+      title2: "From Bari"
+      desc2: "From Bari: Follow A14 towards Brindisi, then SS7 towards Francavilla Fontana."
+    
+    train:
+      title1: "By Train"
+      desc1: "From Rome/Milan: Train to Bari or Brindisi, then local bus or car rental to reach the venue."
+    
+    useful_info:
+      title: "Useful Information"
+      note: "It is necessary to rent a means of transportation during your stay in Puglia to comfortably reach the venues."
+  
+  accommodation:
+    title: "Where to Stay"
+    subtitle: "Recommended accommodations within 5 km of the wedding venue"
+    primary_title: "Masseria Tredicina"
+    primary_desc: "Rooms available for the wedding night (June 6, 2026)"
+    primary_note: "Please confirm via RSVP"
+    nearby_title: "Other Nearby Accommodations"
+    recommended: "Recommended"
+    
+  rsvp:
+    title: "RSVP"
+    subtitle: "Your Presence Is The Most Precious Gift"
+    deadline: "Please confirm your attendance by"
+    deadline_date: "February 2026"
+    description: "To organize our special day perfectly, we need to know who will be with us. Please fill out the confirmation form including any dietary requirements or special requests."
+    button_text: "Confirm Your Attendance"
+    note: "The Google Form link will be available soon"
+    accommodation_title: "Accommodation at the Masseria"
+    accommodation_desc: "If you wish to stay at Masseria Tredicina on the wedding night, please indicate this in the RSVP form."
+    
+  faq:
+    title: "Frequently Asked Questions"
+    subtitle: "Everything you need to know about our wedding"
+    contact_title: "Other Questions?"
+    contact_desc: "If you have any other questions, don't hesitate to contact us directly. We'll be happy to help make your stay in Puglia unforgettable!"
+    
+    regalo:
+      title: "Gift"
+      question1: "What can we give you?"
+      answer1: "Your presence is the most precious gift! If you wish to give a gift, we would appreciate a contribution towards our honeymoon or our new home together."
+      question2: "Is there a wedding registry?"
+      answer2: "We don't have a traditional wedding registry. We prefer to receive a contribution to help us start our new life together. More details will be provided with the invitation."
+    
+    turismo:
+      title: "Tourism"
+      question1: "When is the best time to visit Puglia?"
+      answer1: "June is perfect! The weather is warm and sunny, ideal for exploring the region's beauties. We recommend arriving a few days early to enjoy Ostuni, Alberobello, and the splendid coasts."
+      question2: "Is it necessary to rent a car?"
+      answer2: "Yes, absolutely! A car is essential to move easily between locations and to explore beautiful Puglia during your stay."
+    
+    generale:
+      title: "General Information"
+      question1: "What is the dress code?"
+      answer1: "Semi-formal. For men: elegant shirt and pants (jacket optional). For women: elegant dress or skirt. Avoid total black and white."
+      question2: "Can I bring children?"
+      answer2: "Certainly! Children are welcome. Please indicate their presence in the RSVP to organize appropriate menus and entertainment."
+    
+  footer:
+    date: "June 6, 2026"
+    location: "Puglia, Italy"
+    message: "With all our love"
+    copyright: "Candice & Francesco Wedding"
+
+fr:
+  nav:
+    home: "Accueil"
+    wedding: "Mariage"
+    travel: "Comment s'y rendre"
+    stay: "Où séjourner"
+    rsvp: "RSVP"
+    faq: "FAQ"
+  
+  hero:
+    title: "Candice & Francesco"
+    subtitle: "6 juin 2026 • Pouilles, Italie"
+    description: "Rejoignez-nous pour célébrer notre grand jour dans les magnifiques Pouilles"
+  
+  wedding:
+    title: "Informations sur le Mariage"
+    ceremony: "Cérémonie"
+    reception: "Cocktail & Dîner"
+    brunch: "Brunch & Post Event"
+    time: "Heure"
+    location: "Lieu"
+    view_map: "Informations"
+    
+  travel:
+    title: "Comment s'y rendre"
+    map_title: "Carte des Pouilles"
+    attractions_title: "Attractions Touristiques"
+    by_plane: "En Avion"
+    by_car: "En Voiture"
+    by_train: "En Train"
+    
+    tabs:
+      plane: "Avion"
+      car: "Voiture"
+      train: "Train"
+    
+    plane:
+      title1: "Aéroport de Brindisi (BDS)"
+      desc1: "Depuis l'aéroport de Brindisi (45 km) : Option la plus proche. Location de voiture recommandée. Temps de trajet : 45 minutes."
+      title2: "Aéroport de Bari (BRI)"
+      desc2: "Depuis l'aéroport de Bari (80 km) : Louez une voiture ou prenez un bus pour Francavilla Fontana. Temps de trajet : environ 1 heure."
+    
+    car:
+      title1: "Depuis Brindisi"
+      desc1: "Depuis Brindisi : Suivez la SS7 vers Francavilla Fontana. Route directe de 45 km."
+      title2: "Depuis Bari"
+      desc2: "Depuis Bari : Suivez l'A14 vers Brindisi, puis la SS7 vers Francavilla Fontana."
+    
+    train:
+      title1: "En Train"
+      desc1: "Depuis Rome/Milan : Train jusqu'à Bari ou Brindisi, puis bus local ou location de voiture pour atteindre le lieu."
+    
+    useful_info:
+      title: "Informations Utiles"
+      note: "Il est nécessaire de louer un moyen de transport pendant votre séjour dans les Pouilles pour atteindre confortablement les lieux."
+  
+  accommodation:
+    title: "Où Séjourner"
+    subtitle: "Hébergements recommandés dans un rayon de 5 km du lieu de mariage"
+    primary_title: "Masseria Tredicina"
+    primary_desc: "Chambres disponibles pour la nuit du mariage (6 juin 2026)"
+    primary_note: "Veuillez confirmer via RSVP"
+    nearby_title: "Autres Hébergements à Proximité"
+    recommended: "Recommandé"
+    
+  rsvp:
+    title: "RSVP"
+    subtitle: "Votre Présence Est Le Plus Précieux Cadeau"
+    deadline: "Veuillez confirmer votre présence avant"
+    deadline_date: "Février 2026"
+    description: "Pour organiser parfaitement notre jour spécial, nous devons savoir qui sera avec nous. Veuillez remplir le formulaire de confirmation en incluant toute exigence alimentaire ou demande spéciale."
+    button_text: "Confirmez Votre Présence"
+    note: "Le lien du formulaire Google sera bientôt disponible"
+    accommodation_title: "Hébergement à la Masseria"
+    accommodation_desc: "Si vous souhaitez séjourner à la Masseria Tredicina la nuit du mariage, veuillez l'indiquer dans le formulaire RSVP."
+    
+  faq:
+    title: "Questions Fréquemment Posées"
+    subtitle: "Tout ce que vous devez savoir sur notre mariage"
+    contact_title: "Autres Questions?"
+    contact_desc: "Si vous avez d'autres questions, n'hésitez pas à nous contacter directement. Nous serons heureux de vous aider à rendre votre séjour dans les Pouilles inoubliable!"
+    
+    regalo:
+      title: "Cadeau"
+      question1: "Que pouvons-nous vous offrir ?"
+      answer1: "Votre présence est le cadeau le plus précieux ! Si vous souhaitez offrir un cadeau, nous apprécierions une contribution pour notre voyage de noces ou notre nouvelle maison ensemble."
+      question2: "Y a-t-il une liste de mariage ?"
+      answer2: "Nous n'avons pas de liste de mariage traditionnelle. Nous préférons recevoir une contribution qui nous aide à commencer notre nouvelle vie ensemble. Plus de détails seront fournis avec l'invitation."
+    
+    turismo:
+      title: "Tourisme"
+      question1: "Quel est le meilleur moment pour visiter les Pouilles ?"
+      answer1: "Juin est parfait ! Le climat est chaud et ensoleillé, idéal pour explorer les beautés de la région. Nous vous recommandons d'arriver quelques jours plus tôt pour profiter d'Ostuni, d'Alberobello et des splendides côtes."
+      question2: "Est-il nécessaire de louer une voiture ?"
+      answer2: "Oui, absolument ! Une voiture est essentielle pour se déplacer facilement entre les lieux et pour explorer la belle région des Pouilles pendant votre séjour."
+    
+    generale:
+      title: "Informations Générales"
+      question1: "Quel est le code vestimentaire ?"
+      answer1: "Semi-formel. Pour les hommes : chemise et pantalon élégants (veste optionnelle). Pour les femmes : robe ou jupe élégante. Évitez le noir total et le blanc."
+      question2: "Puis-je amener des enfants ?"
+      answer2: "Certainement ! Les enfants sont les bienvenus. Veuillez indiquer leur présence dans le RSVP pour organiser des menus et des divertissements appropriés."
+    
+  footer:
+    date: "6 juin 2026"
+    location: "Pouilles, Italie"
+    message: "Avec tout notre amour"
+    copyright: "Mariage Candice & Francesco"
