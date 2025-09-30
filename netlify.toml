@@ -5,21 +5,31 @@
 [build.environment]
   RUBY_VERSION = "3.1.2"
 
+# Redirects per gestire le pagine multilingua
+[[redirects]]
+  from = "/en"
+  to = "/en/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/fr"
+  to = "/fr/index.html"  
+  status = 200
+
+[[redirects]]
+  from = "/en/*"
+  to = "/en/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/fr/*" 
+  to = "/fr/index.html"
+  status = 200
+
+# Fallback per pagine non trovate
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  status = 200
-  conditions = {Role = ["admin"]}
-
-# Configurazione per i language paths
-[[redirects]]
-  from = "/en/*"
-  to = "/en/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/fr/*"
-  to = "/fr/:splat"
   status = 200
 
 # Headers per ottimizzazione
